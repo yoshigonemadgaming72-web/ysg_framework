@@ -41,7 +41,3 @@ tasks:
     src: https://github.com/yoshigonemadgaming72-web/ysg_shops
     ref: main
     dest: ./resources/ysg_shops
-
-  - action: download_file
-    url: https://raw.githubusercontent.com/yoshigonemadgaming72-web/ysg-framework/main/resources/sql/ysg_schema.sql
-    path: ./resources/sql/ysg_schema.sql
