@@ -33,15 +33,15 @@ tasks:
     dest: ./resources/oxmysql
 
   - action: download_github
-    src: https://github.com/YOURUSERNAME/ysg_characters
+    src: https://github.com/yoshigonemadgaming72-web/ysg_characters
     ref: main
     dest: ./resources/ysg_characters
 
   - action: download_github
-    src: https://github.com/YOURUSERNAME/ysg_shops
+    src: https://github.com/yoshigonemadgaming72-web/ysg_shops
     ref: main
     dest: ./resources/ysg_shops
 
   - action: download_file
-    url: https://raw.githubusercontent.com/YOURUSERNAME/ysg-framework/main/resources/sql/ysg_schema.sql
+    url: https://raw.githubusercontent.com/yoshigonemadgaming72-web/ysg-framework/main/resources/sql/ysg_schema.sql
     path: ./resources/sql/ysg_schema.sql
