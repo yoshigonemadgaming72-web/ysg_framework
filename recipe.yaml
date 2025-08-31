@@ -7,10 +7,19 @@ description: |
   A full RedM framework powered by ox_core with inventory, character system, and shops.
 
 tasks:
+  # 1) Make sure target folder exists, then fetch the SQL file
+  - action: create_path
+    path: ./resources/sql
+  - action: download_file
+    url: https://raw.githubusercontent.com/yoshigonemadgaming72-web/ysg_framework/main/resources/sql/ysg_schema.sql
+    path: ./resources/sql/ysg_schema.sql
+
+  # 2) DB setup
   - action: connect_database
   - action: query_database
     file: ./resources/sql/ysg_schema.sql
 
+  # 3) Core dependencies
   - action: download_github
     src: https://github.com/overextended/ox_core
     ref: main
@@ -26,6 +35,13 @@ tasks:
     ref: main
     dest: ./resources/oxmysql
 
+  # 4) Inventory (RedM-compatible fork)
+  - action: download_github
+    src: https://github.com/project-unk/ox_inventory_redm
+    ref: main
+    dest: ./resources/ox_inventory
+
+  # 5) Your modules
   - action: download_github
     src: https://github.com/yoshigonemadgaming72-web/ysg_characters
     ref: main
