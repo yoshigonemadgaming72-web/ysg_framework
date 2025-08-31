@@ -6,12 +6,6 @@ author: YSG Dev Team
 description: |
   A full RedM framework powered by ox_core with inventory, character system, and shops.
 
-variables:
-  dbHost: localhost
-  dbUsername: root
-  dbPassword: ""
-  dbName: ysg_redm
-
 tasks:
   - action: connect_database
   - action: query_database
