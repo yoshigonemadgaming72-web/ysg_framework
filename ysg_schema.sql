@@ -1,0 +1,8 @@
+
+CREATE TABLE IF NOT EXISTS characters (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  identifier VARCHAR(64) NOT NULL,
+  firstname VARCHAR(50),
+  lastname VARCHAR(50),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

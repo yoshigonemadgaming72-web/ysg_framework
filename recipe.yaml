@@ -1,0 +1,47 @@
+$engine: 3
+$onesync: on
+
+name: YSG RedM Framework
+author: YSG Dev Team
+description: |
+  A full RedM framework powered by ox_core with inventory, character system, and shops.
+
+variables:
+  dbHost: localhost
+  dbUsername: root
+  dbPassword: ""
+  dbName: ysg_redm
+
+tasks:
+  - action: connect_database
+  - action: query_database
+    file: ./resources/sql/ysg_schema.sql
+
+  - action: download_github
+    src: https://github.com/overextended/ox_core
+    ref: main
+    dest: ./resources/ox_core
+
+  - action: download_github
+    src: https://github.com/overextended/ox_lib
+    ref: main
+    dest: ./resources/ox_lib
+
+  - action: download_github
+    src: https://github.com/overextended/oxmysql
+    ref: main
+    dest: ./resources/oxmysql
+
+  - action: download_github
+    src: https://github.com/YOURUSERNAME/ysg_characters
+    ref: main
+    dest: ./resources/ysg_characters
+
+  - action: download_github
+    src: https://github.com/YOURUSERNAME/ysg_shops
+    ref: main
+    dest: ./resources/ysg_shops
+
+  - action: download_file
+    url: https://raw.githubusercontent.com/YOURUSERNAME/ysg-framework/main/resources/sql/ysg_schema.sql
+    path: ./resources/sql/ysg_schema.sql
